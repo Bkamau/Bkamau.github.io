@@ -1,13 +1,15 @@
+---
+layout: post
+title: Vagrant on Ubuntu
+subtitle: Easy quick setup
+---
 Vagrant is a virtual environment that comes in handy for app developers as well as server administrators. 
-
 You can spin up quite as many virtual Linux boxes as your host machine can handle, configure them as you want and later destroy them when you are done with your project.
-
-This makes sure that your host machine remains clean and stable. Another advantage of using vagrant is many developers for example, regardless of the operating systems they are running can spin up one environment and do their project on it. 
+This makes sure that your host machine remains clean and stable. Another advantage of using vagrant is many developers for example, regardless of the operating systems they are running can spin up one environment and do their project on it.
 
 This eliminates the all too famous tag " .. but it was working on my machine.."
 
 <!--more-->
-
 
 In this tutorial, we shall
 - set up vagrant environment on Linux
@@ -16,9 +18,7 @@ In this tutorial, we shall
 - Deploy the project on Amazon WS
 
 To start us off, head over to <a href="http://href="https://www.vagrantup.com/downloads.html" target="_blank">vagrant download page</a> </a> and install vagrant based on your architecture. 
-
 Next, Install oracle virtual box from  <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">this site</a>. It is possible to use other providers like VM Players but for now lets go with virtual box.
-
 
 Choosing a virtual box is the next thing. you can pick any box you want from sites like
 
