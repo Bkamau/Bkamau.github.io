@@ -12,8 +12,12 @@ yum install cockpit
 
 Enable Cockpit service.
 
-[root@webtest ~]# systemctl enable cockpit.socket
+```bash
+ systemctl enable cockpit.socket
+
 ln -s '/usr/lib/systemd/system/cockpit.socket' '/etc/systemd/system/sockets.target.wants/cockpit.socket'
+
+```
 [root@webtest ~]#
 Add Cockpit to the list of trusted services in FirewallD.
 
