@@ -1,3 +1,9 @@
+---
+layout: post
+title: Setup Django in vagrant
+subtitle: Easy quick setup
+---
+
 This is the second part of our tutorial, First part can be found  <a href="http://benson.fi/index.php/2016/01/04/3356/">here </a>
 
 Continuing from where we left, power up your virtual box and ssh into in case you had destroyed it.
