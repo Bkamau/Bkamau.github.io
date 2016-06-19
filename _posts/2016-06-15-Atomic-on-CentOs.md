@@ -14,7 +14,7 @@ Configure docker storage pool
 ```bash
  $ nano  /etc/sysconfig/docker-storage-setup
 ```
-Paste these two lines inside
+Paste these two lines inside, assuming your disk is vda
 
 ```bash
 DEVS=/dev/vdb
