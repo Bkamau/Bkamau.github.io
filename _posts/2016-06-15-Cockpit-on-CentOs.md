@@ -6,16 +6,15 @@ git clone https://github.com/baude/sig-atomic-buildscripts
 Copy virt7-testing.repo file to /etc/yum.repos.d and install Cockpit.
 
 ```bash
-yum install cockpit
+# yum install cockpit
 ```
 
 
 Enable Cockpit service.
 
 ```bash
- systemctl enable cockpit.socket
-
-ln -s '/usr/lib/systemd/system/cockpit.socket' '/etc/systemd/system/sockets.target.wants/cockpit.socket'
+# systemctl enable cockpit.socket
+# ln -s '/usr/lib/systemd/system/cockpit.socket' '/etc/systemd/system/sockets.target.wants/cockpit.socket'
 
 ```
 [root@webtest ~]#
