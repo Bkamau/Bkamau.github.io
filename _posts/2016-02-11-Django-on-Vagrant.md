@@ -7,20 +7,17 @@ Begin by updating the source list
 ```bash
  $ sudo apt-get update
 ```
-[bash light="true"] $ sudo apt-get update[/bash]
-
-<!--more-->
-
 
 Next, install pip and virtual environment (Its important to use virtual environment in case you need to freeze requirements, however, its optional)
 
-[bash light="true"]$ sudo apt-get install -y python-pip[/bash]
-
-[bash light="true"]$ sudo pip install virtualenv[/bash]
+```bash
+ $  sudo apt-get install -y python-pip
+ $  sudo pip install virtualenv
+```
 
 Next cd into the virtual box vagrant folder, Create a folder called Mysite and within it create a virtual environment, activate it,install Django and start a django project, in that order.
 
-[bash light="true"]
+```bash
 $ cd /vagrant
 $ mkdir Mysite
 $ cd Mysite
@@ -28,17 +25,17 @@ $ virtualenv venv
 $ source venv/bin/activate
 $ pip install django
 $ django-admin startproject mysite
-[/bash]
+```
 
 More info on virtual environment can be found here  <a href="https://virtualenv.readthedocs.org/en/latest/" target="_blank">https://virtualenv.readthedocs.org/en/latest/</a>
 More info on Django can be found here <a href="https://www.djangoproject.com/" target="_blank">https://www.djangoproject.com/</a>
 
 Navigate inside the project file created and run the project
 
-[bash light="true"]
+```bash
 $ cd mysite
 $ python manage.py runserver [::]:8000
-[/bash]
+```
 
 On your host machine, from the browser navigate to http://dev.example.com:8000/ and you Django app should be running.
 
