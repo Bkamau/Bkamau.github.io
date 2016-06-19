@@ -30,10 +30,10 @@ Choosing a virtual box is the next thing. you can pick any box you want from sit
 For this tutorial and concistency sake i shall use Ubuntu 15.04 64bit which can be found <a href="https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=ubuntu+" target="_blank">here</a>. Open terminal and paste the following commands.
 
 ```bash
-$ mkdir Vagrant
-$ cd Vagrant
-$ vagrant box add ubuntu/vivid64
-$ vagrant init ubuntu/vivid64
+ $ mkdir Vagrant
+ $ cd Vagrant
+ $ vagrant box add ubuntu/vivid64
+ $ vagrant init ubuntu/vivid64
 ```
 
 
@@ -66,13 +66,13 @@ By now your configurations should look like this
 Save the file and on the terminal, issue the command 
 
 ```bash
- $ vagrant up
+  $ vagrant up
 ```
 
 Now you have a running Linux virtual box. SSH into the virtual machine using this command
 
 ```bash
- $ vagrant ssh
+  $ vagrant ssh
 ```
 
 And the result should be 
@@ -114,8 +114,8 @@ By using synced folders, Vagrant will automatically sync your files to and from 
 On the virtual machine, (NOT your host machine), cd to the vagrant folder and touch a file, that is
 
 ```bash
- $ cd /vagrant
- $ touch hello
+  $ cd /vagrant
+  $ touch hello
 ```
 On your host machine, in the vagrant folder we created, is a file hello. Therefore this folder syncs with the vagrant folder in our virtual machine.
 
