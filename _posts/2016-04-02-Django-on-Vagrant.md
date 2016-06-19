@@ -24,13 +24,13 @@ Next, install pip and virtual environment (Its important to use virtual environm
 Next cd into the virtual box vagrant folder, Create a folder called Mysite and within it create a virtual environment, activate it,install Django and start a django project, in that order.
 
 ```bash
-$ cd /vagrant
-$ mkdir Mysite
-$ cd Mysite
-$ virtualenv venv
-$ source venv/bin/activate
-$ pip install django
-$ django-admin startproject mysite
+ $ cd /vagrant
+ $ mkdir Mysite
+ $ cd Mysite
+ $ virtualenv venv
+ $ source venv/bin/activate
+ $ pip install django
+ $ django-admin startproject mysite
 ```
 
 More info on virtual environment can be found here  <a href="https://virtualenv.readthedocs.org/en/latest/" target="_blank">https://virtualenv.readthedocs.org/en/latest/</a>
@@ -39,8 +39,8 @@ More info on Django can be found here <a href="https://www.djangoproject.com/" t
 Navigate inside the project file created and run the project
 
 ```bash
-$ cd mysite
-$ python manage.py runserver [::]:8000
+ $ cd mysite
+ $ python manage.py runserver [::]:8000
 ```
 
 On your host machine, from the browser navigate to http://dev.example.com:8000/ and you Django app should be running.
