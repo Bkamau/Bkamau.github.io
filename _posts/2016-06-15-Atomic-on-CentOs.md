@@ -10,7 +10,6 @@ Configure docker storage pool
 #  nano  /etc/sysconfig/docker-storage-setup
 ```
 Paste these two lines inside
-
 ```bash
 DEVS=/dev/vdb
 VG=docker-vg
@@ -18,13 +17,11 @@ VG=docker-vg
 Press ctr+o to save and ctr+x to exit
 
 Start and enable Docker
-
 ```bash
 # systemctl start docker
 # systemctl enable docker
 ```
 Configure service account key for Kubernetes
-
 ```bash
 # mkdir /etc/pki/kube-apiserver
 # openssl genrsa -out /etc/pki/kube-apiserver/serviceaccount.key 2048
@@ -33,7 +30,6 @@ Configure service account key for Kubernetes
 ```
 
 Start and enable Kubernetes
-
 ```bash
 # for SERVICE in etcd kube-apiserver kube-controller-manager  kube-scheduler docker kube-proxy  kubelet; do 
     systemctl restart $SERVICE
