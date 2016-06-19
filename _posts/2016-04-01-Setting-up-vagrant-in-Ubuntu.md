@@ -9,7 +9,6 @@ This makes sure that your host machine remains clean and stable. Another advanta
 
 This eliminates the all too famous tag " .. but it was working on my machine.."
 
-<!--more-->
 
 In this tutorial, we shall
 - set up vagrant environment on Linux
@@ -26,6 +25,7 @@ Choosing a virtual box is the next thing. you can pick any box you want from sit
 <a href="https://atlas.hashicorp.com/boxes/search" target="_blank">https://atlas.hashicorp.com/boxes/search</a>
 
 For this tutorial and concistency sake i shall use Ubuntu 15.04 64bit which can be found <a href="https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=ubuntu+" target="_blank">here</a>. Open terminal and paste the following commands.
+
 
   [bash light="true"]
   mkdir Vagrant
