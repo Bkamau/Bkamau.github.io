@@ -30,12 +30,11 @@ Choosing a virtual box is the next thing. you can pick any box you want from sit
 For this tutorial and concistency sake i shall use Ubuntu 15.04 64bit which can be found <a href="https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=ubuntu+" target="_blank">here</a>. Open terminal and paste the following commands.
 
 ```bash
- $ mkdir Vagrant
- $ cd Vagrant
- $ vagrant box add ubuntu/vivid64
- $ vagrant init ubuntu/vivid64
+$ mkdir Vagrant
+$ cd Vagrant
+$ vagrant box add ubuntu/vivid64
+$ vagrant init ubuntu/vivid64
 ```
-
 
 This will place a vagrant file in the vagrant directory we just created. Most of the lines in this file are commented. Uncomment the following two lines by removing the hash tag 
 
