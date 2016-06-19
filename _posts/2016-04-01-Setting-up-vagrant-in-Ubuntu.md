@@ -16,7 +16,8 @@ In this tutorial, we shall
 - Create a sleek blog
 - Deploy the project on Amazon WS
 
-To start us off, head over to <a href="http://href="https://www.vagrantup.com/downloads.html" target="_blank">vagrant download page</a> </a> and install vagrant based on your architecture. 
+To start us off, head over to <a href="https://www.vagrantup.com/downloads.html" target="_blank">vagrant download page</a> </a> and install vagrant based on your architecture. 
+
 Next, Install oracle virtual box from  <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">this site</a>. It is possible to use other providers like VM Players but for now lets go with virtual box.
 
 Choosing a virtual box is the next thing. you can pick any box you want from sites like
@@ -26,25 +27,29 @@ Choosing a virtual box is the next thing. you can pick any box you want from sit
 
 For this tutorial and concistency sake i shall use Ubuntu 15.04 64bit which can be found <a href="https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=ubuntu+" target="_blank">here</a>. Open terminal and paste the following commands.
 
+```bash
+$ mkdir Vagrant
+$ cd Vagrant
+$ vagrant box add ubuntu/vivid64
+$ vagrant init ubuntu/vivid64
+```
 
-  [bash light="true"]
-  mkdir Vagrant
-  cd Vagrant
-  vagrant box add ubuntu/vivid64
-  vagrant init ubuntu/vivid64[/bash]
 
 This will place a vagrant file in the vagrant directory we just created. Most of the lines in this file are commented. Uncomment the following two lines by removing the hash tag 
 
-  [ruby light="true"]
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-  # config.vm.network "private_network", ip: "192.168.33.10"[/ruby]
+```bash
+ config.vm.network "forwarded_port", guest: 80, host: 8080
+ config.vm.network "private_network", ip: "192.168.33.10"
+```
 
 Next, Add another port line below the one we have uncommented with variables, guest:8000, host:8000
+
 Change the IP address on the other line you have uncommented to anything of your choice, i will use 33.33.33.33.
 We shall use this to create a fake domain name.
+
 By now your configurations should look like this
 
-  [ruby light="true"]
+```bash
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
@@ -53,18 +58,24 @@ By now your configurations should look like this
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "33.33.33.33"[/ruby]
+  config.vm.network "private_network", ip: "33.33.33.33"
+```
 
 Save the file and on the terminal, issue the command 
 
-   [bash light="true"]vagrant up[/bash]
+```bash
+ $ vagrant up
+```
 
 Now you have a running Linux virtual box. SSH into the virtual machine using this command
 
-   [bash light="true"]vagrant ssh[/bash]
+```bash
+ $ vagrant ssh
+```
 
 And the result should be 
-        [bash light="true"]
+
+```bash
 	$ vagrant ssh
 	Welcome to Ubuntu 15.04 (GNU/Linux 3.19.0-42-generic x86_64)
 
@@ -90,44 +101,52 @@ And the result should be
 	Run 'do-release-upgrade' to upgrade to it.
 
 
-	vagrant@vagrant-ubuntu-vivid-64:~$ [/bash]
-
+	vagrant@vagrant-ubuntu-vivid-64:~$ 
+```
+    
 
 There, you have a virtual environment running. Notice the terminal syntax has changed.
 
 By using synced folders, Vagrant will automatically sync your files to and from the guest machine. By default, vagrant shares the vagrant directory we created(the one with the vagrant file)
 
 On the virtual machine, (NOT your host machine), cd to the vagrant folder and touch a file, that is
-[bash light="true"]
-  $ cd /vagrant
-  $ touch hello
- [/bash]
 
+```bash
+ $ cd /vagrant
+ $ touch hello
+```
 On your host machine, in the vagrant folder we created, is a file hello. Therefore this folder syncs with the vagrant folder in our virtual machine.
 
 Finally, lets install a local server in the virtual box and create a fake domain name to access it. For the local server , i shall install Apache, you can use Nginx if u prefer.
 
-[bash light="true"]
+```bash
 $ sudo apt-get update
 $ sudo apt-get install -y apache2  
 $ sudo service apache2 restart
-[/bash]
-
+```
 Now on your host machine, if you go to localhost or 127.0.0.1 from your browser , nothing is showing.
 
 But if you use the IP address we specified in the vagrant file, you should be able to reach the server, so type 33.33.33.33 (or any other IP address you specified, if not sure, open the vagrant file and confirm) on your web browser and you should To be able to reach the server running on your virtual box.
 
-With vagrant, it is possible to setup fake domain names instead of using numbers on your browser. From the command line, type [bash light="true"] $ exit [/bash], this will take you back to your host machine.
+With vagrant, it is possible to setup fake domain names instead of using numbers on your browser. From the command line, type
+
+```bash
+$ exit
+```
+this will take you back to your host machine.
 
 Enter the command 
 
-[bash light="true"] $ sudo gedit /etc/hosts [/bash]
+```bash
+ $ sudo gedit /etc/hosts 
+```
 
 Add the address we specified together with a fake domain. If for example your project is example.com , its good to use dev.example.com . 
 
 Be careful not to provide a real working domain, otherwise you will not be able to reach it. Also, DONT change anything else in that file apart from that one line we are adding. Your file should look similar(maybe not exactly) to this 
 
-[bash light="false"]
+
+```bash
 
 	127.0.0.1	localhost
 	127.0.1.1	spike
@@ -140,7 +159,8 @@ Be careful not to provide a real working domain, otherwise you will not be able 
 	ff02::2 ip6-allrouters
 
 	33.33.33.33 dev.example.com
-[/bash]
+```
+
 
 
 Save and close the file, from you browser navigate to dev.example.com and again you should be able to reach the server running on your spinning virtual box.
