@@ -4,6 +4,9 @@ Continuing from where we left, power up your virtual box and ssh into in case yo
 
 Begin by updating the source list
 
+```bash
+ $ sudo apt-get update
+```
 [bash light="true"] $ sudo apt-get update[/bash]
 
 <!--more-->
