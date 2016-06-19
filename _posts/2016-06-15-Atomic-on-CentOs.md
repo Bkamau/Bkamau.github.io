@@ -43,6 +43,8 @@ Running an atomicapp
 # atomic run projectatomic/helloapache
 ```
 
+Have fun.
+
 
 
 
