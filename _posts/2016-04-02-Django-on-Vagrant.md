@@ -34,6 +34,7 @@ Next cd into the virtual box vagrant folder, Create a folder called Mysite and w
 ```
 
 More info on virtual environment can be found here  <a href="https://virtualenv.readthedocs.org/en/latest/" target="_blank">https://virtualenv.readthedocs.org/en/latest/</a>
+
 More info on Django can be found here <a href="https://www.djangoproject.com/" target="_blank">https://www.djangoproject.com/</a>
 
 Navigate inside the project file created and run the project
