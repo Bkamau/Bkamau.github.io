@@ -4,7 +4,9 @@ title: Vagrant on Ubuntu
 subtitle: Easy quick setup
 ---
 Vagrant is a virtual environment that comes in handy for app developers as well as server administrators. 
+
 You can spin up quite as many virtual Linux boxes as your host machine can handle, configure them as you want and later destroy them when you are done with your project.
+
 This makes sure that your host machine remains clean and stable. Another advantage of using vagrant is many developers for example, regardless of the operating systems they are running can spin up one environment and do their project on it.
 
 This eliminates the all too famous tag " .. but it was working on my machine.."
