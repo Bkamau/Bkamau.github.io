@@ -4,8 +4,10 @@ Clone the GutHub repository.
 
 git clone https://github.com/baude/sig-atomic-buildscripts
 Copy virt7-testing.repo file to /etc/yum.repos.d and install Cockpit.
-
+~~~
 yum install cockpit
+~~~
+
 Enable Cockpit service.
 
 [root@webtest ~]# systemctl enable cockpit.socket
