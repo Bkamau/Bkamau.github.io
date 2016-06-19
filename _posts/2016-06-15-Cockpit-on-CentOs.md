@@ -1,6 +1,4 @@
-Being used to have Cockpit in my Fedora 21 Server VMs I decided that having it also on my CentOS machines would be awesome, unfortunately I quickly found that Cockpit was not available in CentOS repositories. Of course I knew that Cockpit comes installed and enabled by default in CentOS 7 Atomic host image so I figured out that those packages had to be hidden in some Atomic related repo.
-
-After looking a bit I finally found in GitHub the sig-atomic-buildscripts repository that belongs to CentOS Project. This repository contains several scripts and files intended to build your own CentOS Atomic host including virt7-testing.repo, the Yum repository file needed for Cockpit.
+Have cockpit running in your Centos server with this simple steps.
 
 Clone the GutHub repository.
 
