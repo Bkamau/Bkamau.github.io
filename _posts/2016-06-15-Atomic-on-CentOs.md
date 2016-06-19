@@ -1,3 +1,8 @@
+---
+layout: post
+title: Install Atomic in CentOs
+subtitle: Easy quick setup
+---
 
 Install dependencies
 
