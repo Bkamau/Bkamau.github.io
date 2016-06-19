@@ -1,9 +1,6 @@
 Have cockpit running in your Centos server with this simple steps.
 
-Clone the GutHub repository.
-
-git clone https://github.com/baude/sig-atomic-buildscripts
-Copy virt7-testing.repo file to /etc/yum.repos.d and install Cockpit.
+Install cockpit
 
 ```bash
 # yum install cockpit
