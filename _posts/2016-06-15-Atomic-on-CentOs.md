@@ -41,8 +41,8 @@ Start and enable Kubernetes
     systemctl status $SERVICE
 done
 ```
-
 Running an atomicapp
+
 ```bash
 # atomic run projectatomic/helloapache
 ```
