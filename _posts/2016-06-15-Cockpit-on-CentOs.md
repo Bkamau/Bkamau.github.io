@@ -57,7 +57,6 @@ Restart Cockpit.
 ```bash
  $ systemctl restart cockpit
 ```
-systemctl restart cockpit
 
 Access Cockpit web interface at http://DOMAIN:9090/
 
