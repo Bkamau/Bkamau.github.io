@@ -3,6 +3,7 @@ layout: post
 title: Parse Platform on Debian
 subtitle: Easy quick setup
 ---
+
 In order to run parse server, we need to install both NodeJs and mondoDb.
 
 We install NodeJs depedancies first.
