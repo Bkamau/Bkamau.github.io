@@ -1,3 +1,9 @@
+---
+layout: post
+title: Install Cockpit in CentOs
+subtitle: Easy quick setup
+---
+
 Have cockpit running in your Centos server with this simple steps.
 
 Install cockpit
