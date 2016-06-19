@@ -25,7 +25,7 @@ Install forever service
  $ npm install -g forever-service
 ```
 
-Next, install mongodb. Bebian has a mongodb package but in itself, its not enough to run the server.
+Next, install mongodb. Debian has a mongodb package but in itself, its not enough to run the server.
 So we first install it then update it to a later version.
 
 ```bash
