@@ -80,7 +80,7 @@ Make that file executable and run the file
  $ chmod +x permisions.sh
  $ ./permisions.sh
 ```
-Change the file ```bash /etc/apache2/sites-available/000-default.conf``` to look like this
+Change the file ```/etc/apache2/sites-available/000-default.conf``` to look like this
 
 ```bash
  <VirtualHost *:80>
@@ -105,25 +105,20 @@ Change the file ```bash /etc/apache2/sites-available/000-default.conf``` to look
 
 Save and restart apache
 
-```bash 
+```bash
  $ systemctl restart apache2
 ```
 
 Finnally configure database.
 
 
-```bash 
-sudo mysql -u root -p
- 
-CREATE DATABASE nextcloud_db;
- 
-CREATE USER nextclouduser@localhost IDENTIFIED BY 'nextcloud-password';
- 
-GRANT ALL PRIVILEGES ON nextcloud.* TO nextclouduser@localhost;
- 
-EXIT
- ```
-
+```bash
+ sudo mysql -u root -p
+ CREATE DATABASE nextcloud_db;
+ CREATE USER nextclouduser@localhost IDENTIFIED BY 'nextcloud-password';
+ GRANT ALL PRIVILEGES ON nextcloud.* TO nextclouduser@localhost;
+ EXIT
+```
 
 Access Nextcloud on http://localhost or http://DOMAIN
 
