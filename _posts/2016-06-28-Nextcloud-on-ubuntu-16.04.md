@@ -125,8 +125,11 @@ Access Nextcloud on http://localhost or http://DOMAIN
 NB:Use similar credentions for database
 
  Database User = cooluser
+
  Database password = coolpassword
+
  Database name = nextcloud_db
+
  localhost = localhost
 
 
