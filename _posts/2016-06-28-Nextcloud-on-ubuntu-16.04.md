@@ -30,7 +30,7 @@ Create a file that will set the neccesary permisions for nextcloud
 ```bash
  $ nano permisions.sh
 ```
-in it , add the following 
+In it , add the following 
 
 ```bash
 
@@ -113,7 +113,7 @@ Finnally configure database.
 
 
 ```bash
- sudo mysql -u root -p
+ $ sudo mysql -u root -p
  CREATE DATABASE nextcloud_db;
  CREATE USER cooluser@localhost IDENTIFIED BY 'coolpassword';
  GRANT ALL PRIVILEGES ON nextcloud_db.* TO cooluser@localhost;
