@@ -12,9 +12,128 @@ First update system. Become root if u have to.
  $ apt update && apt -y upgrade
 ```
 
-And then install essentials .
+Install lamp server and needed modules.
 
 ```bash
- $ sudo apt-get install -y nodejs build-essential git
+ $ apt install -y lamp-server^ && apt install -y libxml2-dev php-zip php-dom php-xmlwriter php-xmlreader php-gd php-curl php-mbstring && sudo a2enmod rewrite
 ```
+
+Grab the latest release from <a href="https://nextcloud.com/install/#instructions-server">here</a>, unpack it and move it to web root folder
+
+```bash
+ $ cd /tmp && wget https://download.nextcloud.com/server/releases/nextcloud-9.0.51.tar.bz2
+ $ tar -vxjf nextcloud-9.0.51.tar.bz2 && mv nextcloud /var/www/
+```
+
+Create a file that will set the neccesary permisions for nextcloud
+
+```bash
+ $ nano permisions.sh
+```
+in it , add the following 
+
+```bash
+
+ #!/bin/bash
+ncpath='/var/www/nextcloud'
+htuser='www-data'
+htgroup='www-data'
+rootuser='root'
+
+printf "Creating possible missing Directories\n"
+mkdir -p $ncpath/data
+mkdir -p $ncpath/assets
+mkdir -p $ncpath/updater
+
+printf "chmod Files and Directories\n"
+find ${ncpath}/ -type f -print0 | xargs -0 chmod 0640
+find ${ncpath}/ -type d -print0 | xargs -0 chmod 0750
+
+printf "chown Directories\n"
+chown -R ${rootuser}:${htgroup} ${ncpath}/
+chown -R ${htuser}:${htgroup} ${ncpath}/apps/
+chown -R ${htuser}:${htgroup} ${ncpath}/assets/
+chown -R ${htuser}:${htgroup} ${ncpath}/config/
+chown -R ${htuser}:${htgroup} ${ncpath}/data/
+chown -R ${htuser}:${htgroup} ${ncpath}/themes/
+chown -R ${htuser}:${htgroup} ${ncpath}/updater/
+
+chmod +x ${ncpath}/occ
+
+printf "chmod/chown .htaccess\n"
+if [ -f ${ncpath}/.htaccess ]
+ then
+  chmod 0644 ${ncpath}/.htaccess
+  chown ${rootuser}:${htgroup} ${ncpath}/.htaccess
+fi
+if [ -f ${ncpath}/data/.htaccess ]
+ then
+  chmod 0644 ${ncpath}/data/.htaccess
+  chown ${rootuser}:${htgroup} ${ncpath}/data/.htaccess
+fi
+
+```
+
+Make that file executable and run the file
+
+```bash
+ $ chmod +x permisions.sh
+ $ ./permisions.sh
+```
+Change the file ```bash /etc/apache2/sites-available/000-default.conf ``` to look like this
+
+```bash
+ <VirtualHost *:80>
+ 
+ 
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/nextcloud
+ 
+    <Directory “/var/www/html/nextcloud”>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+ 
+ 
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+ 
+</VirtualHost>
+```
+
+Save and restart apache
+
+```bash 
+ $ systemctl restart apache2
+ ```
+
+Finnally configure database.
+
+
+```bash 
+sudo mysql -u root -p
+ 
+CREATE DATABASE nextcloud_db;
+ 
+CREATE USER nextclouduser@localhost IDENTIFIED BY 'nextcloud-password';
+ 
+GRANT ALL PRIVILEGES ON nextcloud.* TO nextclouduser@localhost;
+ 
+EXIT
+ ```
+
+
+Access Nextcloud on http://localhost or http://DOMAIN
+
+
+
+
+
+
+
+
+
+
 
