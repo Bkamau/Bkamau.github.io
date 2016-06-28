@@ -4,14 +4,12 @@ title: Nextcloud on Ubuntu 16.04
 subtitle: Easy quick setup
 ---
 
-In order to run parse server, we need to install both NodeJs and mondoDb.
+Nextcloud is the new service that wants to replace owncloud. To make a long story short, this is how you install nextcloud on ubuntu 16.04
 
-We install NodeJs depedancies first.
+First update system. Become root if u have to.
 
 ```bash
- $ sudo apt-get update  && apt-get upgrade -y
- $ curl -sL https://deb.nodesource.com/setup_5.x -o nodesource_setup.sh
- $ sudo bash ./nodesource_setup.sh
+    $ apt update && apt -y upgrade
 ```
 
 And then install Nodejs,build-essential and git.
