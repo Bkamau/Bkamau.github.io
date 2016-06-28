@@ -115,13 +115,19 @@ Finnally configure database.
 ```bash
  sudo mysql -u root -p
  CREATE DATABASE nextcloud_db;
- CREATE USER nextclouduser@localhost IDENTIFIED BY 'nextcloud-password';
- GRANT ALL PRIVILEGES ON nextcloud.* TO nextclouduser@localhost;
+ CREATE USER cooluser@localhost IDENTIFIED BY 'coolpassword';
+ GRANT ALL PRIVILEGES ON nextcloud_db.* TO cooluser@localhost;
  EXIT
 ```
 
 Access Nextcloud on http://localhost or http://DOMAIN
 
+NB:Use similar credentions for database
+
+Database User = cooluser
+Database password = coolpassword
+Database name = nextcloud_db
+localhost = localhost
 
 
 
