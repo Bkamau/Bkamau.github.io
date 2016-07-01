@@ -10,7 +10,7 @@ We install NodeJs depedancies first.
 
 ```bash
  $ sudo apt-get update  && apt-get upgrade -y
- $ curl -sL https://deb.nodesource.com/setup_5.x -o nodesource_setup.sh
+ $ curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
  $ sudo bash ./nodesource_setup.sh
 ```
 
