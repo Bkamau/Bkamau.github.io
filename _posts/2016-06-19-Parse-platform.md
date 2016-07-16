@@ -36,48 +36,16 @@ Next, install mongodb.
  $ sudo apt-get install -y mongodb-org
  $ sudo service mongod start
 ```
-Create a sevice file for mongodb, if it doesn't exist. You will encounter problems if try to start mongodb without it.
 
-```bash
- $ sudo nano /etc/systemd/system/mongodb.service
-```
-Paste the following inside it,
-
-```bash
-ad[Unit]
-Description=High-performance, schema-free document-oriented database
-After=network.target
-
-[Service]
-User=mongodb
-ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
-
-[Install]
-WantedBy=multi-user.target
-```
-Start mongodb
-
-```bash
- $ sudo systemctl start mongodb
-```
 Now we have depedancies in place, next we shall clone a parse server app, add it to forever service and start it.
 
 ```bash
  $ git clone https://github.com/ParsePlatform/parse-server-example.git
  $ cd ~/parse-server-example
  $ npm install
- $ sudo forever-service install parse-server --script index.js
- $ sudo service parse-server start
+ $ sudo pm2 start index.js
 ```
-
-As indicated from the terminal, you can use this commands with your app
- 
-```bash
-Start   - "sudo service parse-server start"
-Stop    - "sudo service parse-server stop"
-Status  - "sudo service parse-server status"
-Restart - "sudo service parse-server restart"
-```
+Head over to http://localhost:1337/test ( http://DOMAIN:1337/test ) and test the app.
 
 We shall do the same with the parse dashaboard
 
