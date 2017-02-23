@@ -5,8 +5,10 @@ subtitle: Easy quick reference
 ---
 
 Hello Vue.js
-````javascript
+````vue
+
 <div id="app">
   {{msg}}
 </div>
+
 ````
