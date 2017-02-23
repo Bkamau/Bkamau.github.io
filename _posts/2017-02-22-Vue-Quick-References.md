@@ -47,7 +47,6 @@ subtitle: Easy quick reference
 
   The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.
 
-- **See also:** [Custom Option Merging Strategies](../guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
 
@@ -156,7 +155,6 @@ subtitle: Easy quick reference
   <p>Walter White aka Heisenberg</p>
   ```
 
-- **See also:** [Components](../guide/components.html)
 
 <h3 id="Vue-nextTick">Vue.nextTick( [callback, context] )</h3>
 
@@ -179,7 +177,6 @@ subtitle: Easy quick reference
 
   > New in 2.1.0: returns a Promise if no callback is provided and Promise is supported in the execution environment.
 
-- **See also:** [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
 
 <h3 id="Vue-set">Vue.set( object, key, value )</h3>
 
@@ -196,7 +193,6 @@ subtitle: Easy quick reference
 
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
 
-- **See also:** [Reactivity in Depth](../guide/reactivity.html)
 
 <h3 id="Vue-delete">Vue.delete( object, key )</h3>
 
@@ -210,7 +206,6 @@ subtitle: Easy quick reference
 
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
 
-- **See also:** [Reactivity in Depth](../guide/reactivity.html)
 
 <h3 id="Vue-directive">Vue.directive( id, [definition] )</h3>
 
@@ -241,7 +236,6 @@ subtitle: Easy quick reference
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](../guide/custom-directive.html)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
@@ -284,7 +278,6 @@ subtitle: Easy quick reference
   var MyComponent = Vue.component('my-component')
   ```
 
-- **See also:** [Components](../guide/components.html)
 
 <h3 id="Vue-use">Vue.use( plugin )</h3>
 
@@ -297,7 +290,6 @@ subtitle: Easy quick reference
 
   When this method is called on the same plugin multiple times, the plugin will be installed only once.
 
-- **See also:** [Plugins](../guide/plugins.html)
 
 <h3 id="Vue-mixin">Vue.mixin( mixin )</h3>
 
@@ -308,7 +300,6 @@ subtitle: Easy quick reference
 
   Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
 
-- **See also:** [Global Mixins](../guide/mixins.html#Global-Mixin)
 
 <h3 id="Vue-compile">Vue.compile( template )</h3>
 
@@ -331,7 +322,6 @@ subtitle: Easy quick reference
   })
   ```
 
-- **See also:** [Render Functions](../guide/render-function.html)
  
 <h3 id="Vue-version">Vue.version</h3>
 
@@ -395,7 +385,6 @@ if (version === 2) {
 
   <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.</p>
 
-- **See also:** [Reactivity in Depth](../guide/reactivity.html)
 
 ### props
 
@@ -431,7 +420,6 @@ if (version === 2) {
   })
   ```
 
-- **See also:** [Props](../guide/components.html#Props)
 
 ### propsData
 
@@ -497,8 +485,6 @@ if (version === 2) {
   vm.aDouble // -> 4
   ```
 
-- **See also:**
-  - [Computed Properties](../guide/computed.html)
 
 ### methods
 
@@ -525,7 +511,6 @@ if (version === 2) {
   vm.a // 2
   ```
 
-- **See also:** [Methods and Event Handling](../guide/events.html)
 
 ### watch
 
@@ -562,7 +547,6 @@ if (version === 2) {
 
   <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.</p>
 
-- **See also:** [Instance Methods - vm.$watch](#vm-watch)
 
 ## Options / DOM
 
@@ -582,7 +566,6 @@ if (version === 2) {
 
   <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### template
 
@@ -596,9 +579,6 @@ if (version === 2) {
 
   <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
 
-- **See also:**
-  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
-  - [Content Distribution](../guide/components.html#Content-Distribution-with-Slots)
 
 ### render
 
@@ -610,8 +590,7 @@ if (version === 2) {
 
     If the component is a functional component, the render function also receives an extra argument `context`, which provides access to contextual data since functional components are instance-less.
 
-  - **See also:**
-    - [Render Functions](../guide/render-function)
+
 
 ## Options / Lifecycle Hooks
 
@@ -625,7 +604,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called synchronously after the instance has just been initialized, before data observation and event/watcher setup.
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### created
 
@@ -635,7 +613,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeMount
 
@@ -647,7 +624,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### mounted
 
@@ -659,7 +635,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeUpdate
 
@@ -673,7 +648,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### updated
 
@@ -687,7 +661,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### activated
 
@@ -699,9 +672,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### deactivated
 
@@ -713,9 +683,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### beforeDestroy
 
@@ -727,7 +694,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### destroyed
 
@@ -739,7 +705,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ## Options / Assets
 
@@ -751,9 +716,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   A hash of directives to be made available to the Vue instance.
 
-- **See also:**
-  - [Custom Directives](../guide/custom-directive.html)
-  - [Assets Naming Convention](../guide/components.html#Assets-Naming-Convention)
 
 ### filters
 
@@ -763,8 +725,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   A hash of filters to be made available to the Vue instance.
 
-- **See also:**
-  - [`Vue.filter`](#Vue-filter)
 
 ### components
 
@@ -774,8 +734,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   A hash of components to be made available to the Vue instance.
 
-- **See also:**
-  - [Components](../guide/components.html)
 
 ## Options / Misc
 
@@ -813,7 +771,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   // -> 2
   ```
 
-- **See also:** [Mixins](../guide/mixins.html)
 
 ### name
 
@@ -877,7 +834,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Causes a component to be stateless (no `data`) and instanceless (no `this` context). They are simply a `render` function that returns virtual nodes making them much cheaper to render.
 
-- **See also:** [Functional Components](../guide/render-function.html#Functional-Components)
 
 ## Instance Properties
 
@@ -889,7 +845,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.
 
-- **See also:** [Options - data](#data)
 
 ### vm.$el
 
@@ -995,10 +950,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
   ```
 
-- **See also:**
-  - [`<slot>` Component](#slot-1)
-  - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
-  - [Render Functions: Slots](../guide/render-function.html#Slots)
 
 ### vm.$scopedSlots
 
@@ -1014,10 +965,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Accessing `vm.$scopedSlots` is most useful when writing a component with a [render function](../guide/render-function.html).
 
-- **See also:**
-  - [`<slot>` Component](#slot-1)
-  - [Scoped Slots](../guide/components.html#Scoped-Slots)
-  - [Render Functions: Slots](../guide/render-function.html#Slots)
 
 ### vm.$refs
 
@@ -1029,9 +976,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   An object that holds child components that have `ref` registered.
 
-- **See also:**
-  - [Child Component Refs](../guide/components.html#Child-Component-Refs)
-  - [ref](#ref)
 
 ### vm.$isServer
 
@@ -1043,7 +987,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Whether the current Vue instance is running on the server.
 
-- **See also:** [Server-Side Rendering](../guide/ssr.html)
 
 ## Instance Methods / Data
 
@@ -1127,7 +1070,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   This is the **alias** of the global `Vue.set`.
 
-- **See also:** [Vue.set](#Vue-set)
 
 <h3 id="vm-delete">vm.$delete( object, key )</h3>
 
@@ -1139,7 +1081,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   This is the **alias** of the global `Vue.delete`.
 
-- **See also:** [Vue.delete](#Vue-delete)
 
 ## Instance Methods / Events
 
@@ -1233,9 +1174,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   document.getElementById('app').appendChild(component.$el)
   ```
 
-- **See also:**
-  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
-  - [Server-Side Rendering](../guide/ssr.html)
 
 <h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
 
@@ -1275,9 +1213,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
   ```
 
-- **See also:**
-  - [Vue.nextTick](#Vue-nextTick)
-  - [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
 
 <h3 id="vm-destroy">vm.$destroy()</h3>
 
@@ -1289,7 +1224,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   <p class="tip">In normal use cases you shouldn't have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using `v-if` and `v-for`.</p>
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ## Directives
 
@@ -1309,7 +1243,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <span>{{msg}}</span>
   ```
 
-- **See also:** [Data Binding Syntax - interpolations](../guide/syntax.html#Text)
 
 ### v-html
 
@@ -1326,7 +1259,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```html
   <div v-html="html"></div>
   ```
-- **See also:** [Data Binding Syntax - interpolations](../guide/syntax.html#Raw-HTML)
 
 ### v-show
 
@@ -1338,7 +1270,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   This directive triggers transitions when its condition changes.
 
-- **See also:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
 
 ### v-if
 
@@ -1352,7 +1283,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   <p class="tip">When used together with v-if, v-for has a higher priority than v-if. See the <a href="../guide/list.html#v-for-with-v-if">list rendering guide</a> for details.</p>
 
-- **See also:** [Conditional Rendering - v-if](../guide/conditional.html)
 
 ### v-else
 
@@ -1373,8 +1303,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </div>
   ```
 
-- **See also:**
-  - [Conditional Rendering - v-else](../guide/conditional.html#v-else)
 
 ### v-else-if
 
@@ -1403,7 +1331,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </div>
   ```
 
-- **See also:** [Conditional Rendering - v-else-if](../guide/conditional.html#v-else-if)
 
 ### v-for
 
@@ -1439,9 +1366,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   The detailed usage for `v-for` is explained in the guide section linked below.
 
-- **See also:**
-  - [List Rendering](../guide/list.html)
-  - [key](../guide/list.html#key)
 
 ### v-on
 
@@ -1514,10 +1438,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <my-component @click.native="onClick"></my-component>
   ```
 
-- **See also:**
-  - [Methods and Event Handling](../guide/events.html)
-  - [Components - Custom Events](../guide/components.html#Custom-Events)
-
 ### v-bind
 
 - **Shorthand:** `:`
@@ -1582,9 +1502,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   `.camel` is not needed if you are using string templates, or compiling with `vue-loader`/`vueify`.
 
-- **See also:**
-  - [Class and Style Bindings](../guide/class-and-style.html)
-  - [Components - Component Props](../guide/components.html#Props)
 
 ### v-model
 
@@ -1605,9 +1522,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Create a two-way binding on a form input element or a component. For detailed usage and other notes, see the Guide section linked below.
 
-- **See also:**
-  - [Form Input Bindings](../guide/forms.html)
-  - [Components - Form Input Components using Custom Events](../guide/components.html#Form-Input-Components-using-Custom-Events)
 
 ### v-pre
 
@@ -1671,9 +1585,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </ul>
   ```
 
-- **See also:**
-  - [Data Binding Syntax - interpolations](../guide/syntax.html#Text)
-  - [Components - Cheap Static Components with v-once](../guide/components.html#Cheap-Static-Components-with-v-once)
 
 ## Special Attributes
 
@@ -1726,7 +1637,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
-- **See also:** [Child Component Refs](../guide/components.html#Child-Component-Refs)
 
 ### slot
 
@@ -1736,7 +1646,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   For detailed usage, see the guide section linked below.
 
-- **See also:** [Named Slots](../guide/components.html#Named-Slots)
 
 ## Built-In Components
 
@@ -1759,7 +1668,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <component :is="$options.components.child"></component>
   ```
 
-- **See also:** [Dynamic Components](../guide/components.html#Dynamic-Components)
 
 ### transition
 
@@ -1828,7 +1736,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   }).$mount('#transition-demo')
   ```
 
-- **See also:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
 
 ### transition-group
 
@@ -1856,7 +1763,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </transition-group>
   ```
 
-- **See also:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
 
 ### keep-alive
 
@@ -1914,7 +1820,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   <p class="tip">`<keep-alive>` does not work with functional components because they do not have instances to be cached.</p>
 
-- **See also:** [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### slot
 
@@ -1927,7 +1832,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   For detailed usage, see the guide section linked below.
 
-- **See also:** [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
 
 ## VNode Interface
 
