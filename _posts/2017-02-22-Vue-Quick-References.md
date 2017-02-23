@@ -1,6 +1,6 @@
 ---
 layout: post
-title: VueJs 
+title: VueJs API
 subtitle: Easy quick reference
 ---
 
