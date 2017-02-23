@@ -12,3 +12,12 @@ Hello Vue.js
 </div>
 
 ````
+
+``` javascript
+var foo = function (bar) {
+  return bar++;
+};
+{{mjjd}}
+
+console.log(foo(5));
+```
