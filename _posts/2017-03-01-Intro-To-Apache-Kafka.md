@@ -7,4 +7,4 @@ Kafka™ is used for building real-time data pipelines and streaming apps. It is
 
 These are some of the terminologies that define Kafka.
 
-![Image of Yaktocat]({{ site.baseurl }}/img/404-southpark.jpg) 
+![Image of Yaktocat]({{ site.baseurl }}/img/kafka.png) 
